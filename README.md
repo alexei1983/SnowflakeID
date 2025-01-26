@@ -1,4 +1,4 @@
-## SnowflakeID
+## SnowflakeID.Net
 
 A thread-safe mechanism for generating snowflake IDs.
 
