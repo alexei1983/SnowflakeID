@@ -19,7 +19,7 @@ Each combination of data center ID and worker ID should be a singleton to preven
 The `SnowflakeProvider` class provides the `Next` method that generates a snowflake ID for the specified data center ID and worker ID. The provider class should be a singleton 
 across all applications that use it.
 
-To generate a new snowflake ID for data center `1` and worker ID `1`:
+To generate a new snowflake ID for worker ID `1` and data center ID `1`:
 
 ```
 var snowflakeId = SnowflakeProvider.Next(1, 1);
@@ -28,9 +28,9 @@ var snowflakeId = SnowflakeProvider.Next(1, 1);
 If the snowflake ID functionality cannot be centralized into a service with a singleton instance of the provider class, the `Snowflake` class can be used independently in multiple places as long as each combination of 
 data center ID and worker ID are singletons across your domain context.
 
-To use the `Snowflake` class for a specific data center ID and worker ID (in this case data center ID `2` and worker ID `4`):
+To use the `Snowflake` class for a specific data center ID and worker ID (in this case worker ID `4` and data center ID `2`):
 
 ```
-var snowflakeGenerator = new Snowflake(2, 4);
+var snowflakeGenerator = new Snowflake(4, 2);
 var snowflakeId = snowflakeGenerator.Next();
 ```
